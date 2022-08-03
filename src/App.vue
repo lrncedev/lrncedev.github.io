@@ -1,8 +1,8 @@
 <template>
   <Navbar />
   <HeroSection />
-  <TechStack />
   <ProjectSection />
+  <TechStack />
   <Footer></Footer>
 </template>
 
