@@ -4,10 +4,33 @@
     <div class="socials">
       <h2 class="message">Follow or Contact Me:</h2>
       <ul class="socialLinks">
-        <li><a href="https://www.facebook.com/cadsuu" target="_blank" class="link"><font-awesome-icon icon="fa-brands fa-facebook-f" class="socialIcon"/></a></li>
-        <li><a href="https://www.linkedin.com/in/laurencecadag/" target="_blank" class="link"><font-awesome-icon icon="fa-brands fa-linkedin-in" class ="socialIcon"/></a></li>
-        <li><a href="https://codepen.io/LaurenceDev"   target="_blank" class="link"><font-awesome-icon icon="fa-brands fa-codepen" class ="socialIcon"/></a></li>
-        <li><a href="https://twitter.com/Cadsu3"  target="_blank"  class="link"><font-awesome-icon icon="fa-brands fa-twitter" class ="socialIcon"/></a></li>
+        <li>
+          <a href="https://www.facebook.com/cadsuu" target="_blank" class="link"
+            ><font-awesome-icon
+              icon="fa-brands fa-facebook-f"
+              class="socialIcon"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/laurencecadag/"
+            target="_blank"
+            class="link"
+            ><font-awesome-icon
+              icon="fa-brands fa-linkedin-in"
+              class="socialIcon"
+          /></a>
+        </li>
+        <li>
+          <a href="https://codepen.io/LaurenceDev" target="_blank" class="link"
+            ><font-awesome-icon icon="fa-brands fa-codepen" class="socialIcon"
+          /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/Cadsu3" target="_blank" class="link"
+            ><font-awesome-icon icon="fa-brands fa-twitter" class="socialIcon"
+          /></a>
+        </li>
       </ul>
     </div>
     <div>
@@ -19,8 +42,8 @@
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Footer"
-}
+  name: "Footer",
+};
 </script>
 
 <style>
@@ -40,7 +63,7 @@ footer {
   margin: 1rem 0;
 }
 .message {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-weight: 300;
 }
@@ -55,7 +78,6 @@ footer {
   color: #333;
 }
 
-
 @media screen and (max-width: 630px) {
   .message {
     font-size: 1.2rem;
@@ -64,7 +86,7 @@ footer {
     font-size: 1rem;
   }
   .socials {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 }
 </style>

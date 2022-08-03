@@ -1,10 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="hero" id="hero">
-    <div class="heroText"> 
+    <div class="heroText">
       <h1 class="owner">Hi, im Laurence</h1>
       <h3 class="ownerTitle">Front-End Web Developer</h3>
-      <p class="ownerDescription">An Information Technology Graduate, IT Educator, and a Gamer.</p>
+      <p class="ownerDescription">
+        An Information Technology Graduate, IT Educator, and a Gamer.
+      </p>
       <div class="cta">
         <button class="know">Know more</button>
       </div>
@@ -13,8 +15,8 @@
 </template>
 <script>
 export default {
-  name: "HeroSection"
-}
+  name: "HeroSection",
+};
 </script>
 
 <style>

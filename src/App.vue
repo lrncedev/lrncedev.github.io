@@ -1,32 +1,31 @@
 <template>
-  <Navbar/>
-  <HeroSection/>
-  <ProjectSection/>
-  <TechStack/>
-  <Footer/>
+  <Navbar />
+  <HeroSection />
+  <TechStack />
+  <ProjectSection />
+  <Footer></Footer>
 </template>
 
 <script>
-
-import Navbar from './components/Navbar.vue'
-import HeroSection from "./components/Hero.vue"
-import ProjectSection from "./components/ProjectSection.vue"
-import TechStack from './components/TechStack.vue'
-import Footer from "./components/Footer.vue"
+import Navbar from "./components/Navbar.vue";
+import HeroSection from "./components/Hero.vue";
+import ProjectSection from "./components/ProjectSection.vue";
+import TechStack from "./components/TechStack.vue";
+import Footer from "./components/Footer.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navbar,
     HeroSection,
     ProjectSection,
     TechStack,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -35,10 +34,10 @@ html {
   padding: 0;
   list-style-type: none;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 #app {
-  font-family: 'Lato', sans-serif, Arial, sans-serif;
+  font-family: "Lato", sans-serif, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,7 +47,8 @@ html {
   align-items: center;
   justify-content: center;
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.8)),url("./assets/background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)),
+    url("./assets/background.jpg");
   height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,7 +58,9 @@ html {
   padding: 0 2rem;
 }
 
-.owner, .ownerTitle, .ownerDescription {
+.owner,
+.ownerTitle,
+.ownerDescription {
   margin-bottom: 1.2rem;
 }
 
@@ -79,7 +81,7 @@ html {
 }
 
 .know {
-  padding: .8rem;
+  padding: 0.8rem;
   font-weight: 900;
   text-transform: uppercase;
   background-color: #e28743;
@@ -87,5 +89,4 @@ html {
   border-radius: 4px;
   border: none;
 }
-
 </style>
