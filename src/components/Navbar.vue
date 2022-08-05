@@ -1,71 +1,112 @@
 <template>
   <nav id="navbar">
     <div class="logo">
-      <a href="#navbar"
-        ><img
+      <a href="#navbar">
+        <img
           src="../assets/android-chrome-512x512.png"
           alt="Logo"
-          class="logoImg"
-      /></a>
+          class="logoImg"/>
+      </a>
     </div>
-    <div class="navlink">
-      <ul class="links">
-        <li class="link-item"><a href="#hero">Home</a></li>
-        <li class="link-item"><a href="#projects">Projects</a></li>
-        <li class="link-item"><a href="#techstack">Tech Stack</a></li>
-        <li class="link-item"><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="navlinks">
+      <a href="#hero">Home</a>
+      <a href="#techstack">Tech Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
     </div>
+    <button class="showLinks" @click="showLink"><font-awesome-icon icon="fa-solid fa-bars " /></button>
   </nav>
 </template>
 
 <script>
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Navbar",
+  methods: {
+    showLink() {
+      const navlink = document.querySelector('.navlinks');
+      navlink.classList.toggle("active");
+    }
+  }
 };
 </script>
 
 <style>
+/* * {
+  outline: 1px solid white;
+} */
+
 nav {
   background-color: black;
   display: flex;
-  padding: 0.3rem;
   align-items: center;
-  position: fixed;
-  width: 100%;
+  padding: 1em;
+}
+button {
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.navlinks a{
+  padding: .5rem .2rem;
+  color: white;
+  margin-right: .5rem;
+  font-size: 1.3em;
+}
+.navlinks a:hover {
+  border-bottom: 1px solid white;
 }
 
 .logo {
   flex-grow: 1;
 }
 .logoImg {
-  height: 60px;
-  padding-left: 2.5rem;
+  height: 40px;
 }
 
 .links {
   display: flex;
-  font-size: 1.5rem;
 }
 
-.link-item {
-  margin-right: 1.2rem;
-}
 
-.link-item a {
-  color: white;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.link-item a:hover {
-  border-bottom: 1px solid white;
-}
-
-@media screen and (max-width: 630px) {
-  .navlink {
+@media screen and (max-width: 40em) {
+  nav {
+    position: relative;
+  }
+  .navlinks {
     display: none;
   }
+  .showLinks {
+    display: block;
+  }
 }
+
+@media screen and (max-width: 40em) {
+  nav {
+    padding-left: 0;
+  }
+  .navlinks.active {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 100%;
+    text-transform: uppercase;
+  }
+  .navlinks.active a {
+    padding: .5em 0;
+    font-size: 1.2rem;
+  }
+  .navlinks.active a:hover {
+    background-color: rgb(50, 50, 50);
+  }
+}
+
+
 </style>
