@@ -5,9 +5,9 @@
       <h2 class="message">Follow or Contact Me:</h2>
       <ul class="socialLinks">
         <li>
-          <a href="https://www.facebook.com/cadsuu" target="_blank" class="link"
+          <a href="https://github.com/lrncedev" target="_blank" class="link"
             ><font-awesome-icon
-              icon="fa-brands fa-facebook-f"
+              icon="fa-brands fa-github"
               class="socialIcon"
           /></a>
         </li>
@@ -24,11 +24,6 @@
         <li>
           <a href="https://codepen.io/LaurenceDev" target="_blank" class="link"
             ><font-awesome-icon icon="fa-brands fa-codepen" class="socialIcon"
-          /></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/Cadsu3" target="_blank" class="link"
-            ><font-awesome-icon icon="fa-brands fa-twitter" class="socialIcon"
           /></a>
         </li>
       </ul>

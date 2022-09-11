@@ -1,7 +1,7 @@
 <template>
   <div class="techSection" id="techstack">
     <div class="sectionTitle">Tech Stack</div>
-    <div class="stackList">
+    <div class="stackList stack1">
       <div class="stack">
         <font-awesome-icon icon="fa-brands fa-html5" class="stackIcon" />
         <div class="stackName">HTML</div>
@@ -14,6 +14,8 @@
         <font-awesome-icon icon="fa-brands fa-js" class="stackIcon" />
         <div class="stackName">JavaScript</div>
       </div>
+    </div>
+    <div class="stackList">
       <div class="stack">
         <font-awesome-icon icon="fa-brands fa-vuejs" class="stackIcon" />
         <div class="stackName">Vue 3</div>
@@ -26,6 +28,7 @@
         <font-awesome-icon icon="fa-brands fa-sass" class="stackIcon" />
         <div class="stackName">SaSS</div>
       </div>
+      
     </div>
   </div>
 </template>
@@ -51,10 +54,13 @@ export default {
 }
 
 .stackList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.stack1 {
+  margin-bottom: 1em;
 }
 .stack {
   text-align: center;
@@ -78,6 +84,14 @@ export default {
     font-weight: 300;
     text-transform: uppercase;
     margin-top: 1.2rem;
+  }
+  
+}
+
+
+@media screen and (max-width: 30em) {
+  .stackList {
+    grid-auto-flow: row;
   }
 }
 </style>

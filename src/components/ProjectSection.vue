@@ -1,7 +1,7 @@
 <template>
   <div class="projectSection" id="projects">
     <h2 class="sectionTitle">PROJECTS</h2>
-    <div class="projectList">
+    <div class="projectGrid">
       <div class="card">
         <div class="cardImg">
           <img
@@ -15,18 +15,14 @@
           <p class="card-text">
             An ecommerce app built with HTML, CSS, and JavaScript
           </p>
-        </div>
-        <div class="cardControl">
-          <button class="controls">
+          <div class="projectLink">
             <a href="https://lrncedev.github.io/eCommerceApp/" target="_blank"
               >Demo</a
             >
-          </button>
-          <button class="controls">
             <a href="https://github.com/lrncedev/eCommerceApp" target="_blank"
-              >Github Link</a
+              >Github</a
             >
-          </button>
+        </div>
         </div>
       </div>
 
@@ -43,22 +39,18 @@
           <p class="card-text">
             An landing page built with HTML, CSS, and JavaScript
           </p>
-        </div>
-        <div class="cardControl">
-          <button class="controls">
+          <div class="projectLink">
             <a
               href="https://lrncedev.github.io/odinLandingPage/"
               target="_blank"
               >Demo</a
             >
-          </button>
-          <button class="controls">
             <a
               href="https://github.com/lrncedev/odinLandingPage"
               target="_blank"
-              >Github Link</a
+              >Github</a
             >
-          </button>
+        </div>
         </div>
       </div>
 
@@ -75,22 +67,18 @@
           <p class="card-text">
             Site that consumes API to gather recipes on ingredient searching.
           </p>
-        </div>
-        <div class="cardControl">
-          <button class="controls">
+          <div class="projectLink">
             <a href="https://lrncedev.github.io/recipe-app/" target="_blank"
               >Demo</a
             >
-          </button>
-          <button class="controls">
             <a href="https://github.com/lrncedev/recipe-app" target="_blank"
-              >Github Link</a
+              >Github</a
             >
-          </button>
+          </div>
         </div>
       </div>
 
-      <div class="card">
+      <!-- <div class="card">
         <div class="cardImg">
           <img
             src="https://cdn.pixabay.com/photo/2017/07/28/23/18/coming-soon-2550190_960_720.jpg"
@@ -99,18 +87,20 @@
           />
         </div>
         <div class="cardBody">
-          <h5 class="card-title">Storey - ECommerce App</h5>
+          <h5 class="card-title">Comming Soon</h5>
           <p class="card-text">
-            An ecommerce app built with HTML, CSS, and JavaScript
+            Coming soon..
           </p>
+          <div class="projectLink">
+            <a href="#" disable target="_blank"
+              >Demo</a
+            >
+            <a href="#" disable target="_blank"
+              >Github</a
+            >
+          </div>
         </div>
-        <div class="cardControl">
-          <button class="controls"><a href="" target="_blank">Demo</a></button>
-          <button class="controls">
-            <a href="" target="_blank">Github Link</a>
-          </button>
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -132,35 +122,44 @@ export default {
   font-weight: 400;
   margin-bottom: 1rem;
 }
-.projectList {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
+.projectGrid {
+  display: grid;
+  gap: 1em;
 }
 .card {
-  width: 250px;
+  display: flex;
   background-color: #333;
   color: white;
-  padding: 0.6rem;
-  margin-bottom: 0.6rem;
-  border-radius: 10px;
+  /* justify-content: space-bet; */
 }
 
-.cardImg {
-  padding: 0.3rem;
+.card > * {
+  flex-basis: 100%;
 }
+
 .card-img-top {
-  height: 150px;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
+}
+
+.card-img-top:hover {
+  scale: 1.20;
+  object-fit: fill;
 }
 .cardBody {
-  padding: 0.2rem;
-  margin: 0.4rem 0;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardBody > * {
+  margin-bottom: .3em;
 }
 .card-title {
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
   font-weight: 400;
 }
@@ -169,25 +168,48 @@ export default {
   font-size: 0.9rem;
   font-weight: 300;
   text-align: justify;
-  padding: 0 0.4rem;
+  /* padding: 0 0.4rem; */
 }
 
-.cardControl {
+.projectLink {
   display: flex;
-  justify-content: space-evenly;
-}
-.controls {
-  border: none;
-  border-radius: 4px;
-  margin-right: 0.5rem;
-  padding: 0.4rem;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-  background-color: #49be25;
+  /* justify-content: space-evenly; */
+  padding: .5em 0;
+  gap: 1em;
 }
 
-.controls a {
+.projectLink a {
+  margin-top: .5em;
+  padding: .3em;
+  border-radius: 4px;
+  background-color: green;
   color: white;
+}
+
+@media screen and (min-width: 40em) {
+  .projectGrid {
+    grid-auto-flow: column;
+  }
+
+  .card {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  /* .card:first-child {
+    height: 100%;
+  } */
+}
+
+@media screen and (max-width: 360px) {
+  .projectLink  {
+    flex-direction: column;
+  }
+
+  .projectLink a {
+    border-radius: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 </style>

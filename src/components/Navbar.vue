@@ -12,7 +12,7 @@
       <a href="#hero">Home</a>
       <a href="#techstack">Tech Stack</a>
       <a href="#projects">Projects</a>
-      <a href="#achievements">Achievements</a>
+      <a href="#achievements" class="achievements">Achievements</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="showLinks" @click="showLink"><font-awesome-icon icon="fa-solid fa-bars " /></button>
@@ -37,7 +37,9 @@ export default {
 /* * {
   outline: 1px solid white;
 } */
-
+.achievements {
+  background-color: red;
+}
 nav {
   background-color: black;
   display: flex;
