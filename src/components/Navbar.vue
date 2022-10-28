@@ -9,11 +9,11 @@
       </a>
     </div>
     <div class="navlinks">
-      <a href="#hero">Home</a>
-      <a href="#techstack">Tech Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#achievements" class="achievements">Achievements</a>
-      <a href="#contact">Contact</a>
+      <a class="nav-link" href="#hero">Home</a>
+      <a class="nav-link" href="#techstack">Tech Stack</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
     <button class="showLinks" @click="showLink"><font-awesome-icon icon="fa-solid fa-bars " /></button>
   </nav>
@@ -28,6 +28,13 @@ export default {
     showLink() {
       const navlink = document.querySelector('.navlinks');
       navlink.classList.toggle("active");
+
+      const links = document.querySelectorAll('.nav-link');
+      links.forEach(link => {
+        link.addEventListener('click', function(){
+          navlink.classList.remove('active');
+        })
+      })
     }
   }
 };
@@ -47,6 +54,7 @@ nav {
   padding: 1em;
 }
 button {
+  border: none;
   background: transparent;
   color: white;
   font-size: 1.5rem;
@@ -99,11 +107,13 @@ button {
     flex-direction: column;
     width: 100%;
     top: 100%;
+    /* margin-left: em; */
     text-transform: uppercase;
   }
   .navlinks.active a {
     padding: .5em 0;
     font-size: 1.2rem;
+    margin-left: .5rem;
   }
   .navlinks.active a:hover {
     background-color: rgb(50, 50, 50);

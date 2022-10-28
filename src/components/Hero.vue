@@ -9,7 +9,7 @@
       </p>
       <div class="cta">
         <!-- <a href="~" class="resumeBtn" download>Download Resume</a> -->
-        <a :href="`${publicPath}cadag_resume.pdf`" download="LaurenceCadag_resume" class="resumeBtn">Download resume</a>
+        <a :href="`${publicPath}Cadag_Laurence_Resume.pdf`" download="LaurenceCadag_resume" class="resumeBtn">Download resume</a>
       </div>
     </div>
   </div>

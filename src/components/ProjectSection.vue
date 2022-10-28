@@ -4,7 +4,7 @@
     <div class="projectGrid">
       <div class="card">
         <div class="cardImg">
-          <img
+          <img loading="lazy"
             src="../assets/ecommerce.png"
             class="card-img-top"
             alt="Thumbnail Image for Storey, an Ecommerce site"
@@ -28,7 +28,7 @@
 
       <div class="card">
         <div class="cardImg">
-          <img
+          <img loading="lazy"
             src="../assets/rio.png"
             class="card-img-top"
             alt="Thumbnail for Rio De Janeiro Project"
@@ -56,7 +56,7 @@
 
       <div class="card">
         <div class="cardImg">
-          <img
+          <img loading="lazy"
             src="../assets/recipe-app.png"
             class="card-img-top"
             alt="Thumbnail for Recipe-App"
@@ -78,29 +78,29 @@
         </div>
       </div>
 
-      <!-- <div class="card">
+      <div class="card">
         <div class="cardImg">
-          <img
-            src="https://cdn.pixabay.com/photo/2017/07/28/23/18/coming-soon-2550190_960_720.jpg"
+          <img  loading="lazy"
+            src="../assets/pokemon-app.png"
             class="card-img-top"
-            alt="..."
+            alt="pokemon-app"
           />
         </div>
         <div class="cardBody">
-          <h5 class="card-title">Comming Soon</h5>
+          <h5 class="card-title">Pokemon App using REST API</h5>
           <p class="card-text">
-            Coming soon..
+            Classic PokeDex
           </p>
           <div class="projectLink">
-            <a href="#" disable target="_blank"
+            <a href="https://lrncedev.github.io/pokemon-app/" disable target="_blank"
               >Demo</a
             >
-            <a href="#" disable target="_blank"
+            <a href="https://github.com/lrncedev/pokemon-app" disable target="_blank"
               >Github</a
             >
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -125,12 +125,14 @@ export default {
 .projectGrid {
   display: grid;
   gap: 1em;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 .card {
   display: flex;
   background-color: #333;
   color: white;
-  /* justify-content: space-bet; */
+  transition: scale 1s;
 }
 
 .card > * {
@@ -141,12 +143,17 @@ export default {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: scale 1s;
+}
+.card:hover {
+  scale: 1.03;
 }
 
-.card-img-top:hover {
-  scale: 1.20;
+/* .card-img-top:hover {
+  scale: 1.05;
   object-fit: fill;
-}
+} */
+
 .cardBody {
   padding: .5rem;
   display: flex;
@@ -188,7 +195,7 @@ export default {
 
 @media screen and (min-width: 40em) {
   .projectGrid {
-    grid-auto-flow: column;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 
   .card {
@@ -201,6 +208,13 @@ export default {
   } */
 }
 
+@media screen and (min-width: 45em) {
+  .projectGrid {
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1em;
+  }
+}
 @media screen and (max-width: 360px) {
   .projectLink  {
     flex-direction: column;

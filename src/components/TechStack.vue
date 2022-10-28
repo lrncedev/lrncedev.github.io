@@ -1,6 +1,6 @@
 <template>
   <div class="techSection" id="techstack">
-    <div class="sectionTitle">Tech Stack</div>
+    <div class="sectionTitle">Tech Stacks</div>
     <div class="stackList stack1">
       <div class="stack">
         <font-awesome-icon icon="fa-brands fa-html5" class="stackIcon" />
@@ -14,8 +14,6 @@
         <font-awesome-icon icon="fa-brands fa-js" class="stackIcon" />
         <div class="stackName">JavaScript</div>
       </div>
-    </div>
-    <div class="stackList">
       <div class="stack">
         <font-awesome-icon icon="fa-brands fa-vuejs" class="stackIcon" />
         <div class="stackName">Vue 3</div>
@@ -28,8 +26,18 @@
         <font-awesome-icon icon="fa-brands fa-sass" class="stackIcon" />
         <div class="stackName">SaSS</div>
       </div>
-      
+      <div class="stack">
+        <font-awesome-icon icon="fa-brands fa-node-js" class="stackIcon" />
+        <div class="stackName">Node JS</div>
+      </div>
+      <div class="stack">
+        <font-awesome-icon icon="fa-brands fa-php" class="stackIcon" />
+        <div class="stackName">PHP</div>
+      </div>
     </div>
+    <!-- <div class="stackList">
+      
+    </div> -->
   </div>
 </template>
 
@@ -46,18 +54,28 @@ export default {
   background-color: #333;
 }
 
+.stackList {
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  grid-template-rows: repeat(2, minmax(50px, 1fr));
+}
+
 .sectionTitle {
   text-align: center;
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 1rem;
 }
-
+/* 
 .stackList {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
 }
+*/
+
 
 .stack1 {
   margin-bottom: 1em;
@@ -91,7 +109,14 @@ export default {
 
 @media screen and (max-width: 30em) {
   .stackList {
-    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+} 
+
+@media screen and (max-width: 20em) {
+  .stackList {
+    grid-template-columns: 1fr;
   }
 }
 </style>
