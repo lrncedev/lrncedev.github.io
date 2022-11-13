@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'; 
+
+
 
 
 /* import the fontawesome core */
@@ -13,6 +16,4 @@ import { faHtml5, faCss3, faJs, faVuejs, faGit, faSass, faFacebookF, faLinkedinI
 
 /* add icons to the library */
 library.add( faHtml5, faCss3, faJs, faVuejs, faGit, faSass, faFacebookF, faLinkedinIn, faCodepen, faTwitter,faBars ,faGithub, faNodeJs, faNode, faPhp)
-createApp(App)
-.component('font-awesome-icon', FontAwesomeIcon)
-.mount('#app')
+createApp(App).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
