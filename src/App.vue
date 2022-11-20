@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <nav>
+    <!-- <nav>
       <router-link to="/" class="logo-router">
         <img src="@/assets/android-chrome-512x512.png" alt="Logo" class="logo-img"/>
       </router-link>
@@ -11,15 +11,19 @@
         <router-link to="/contact">Contact</router-link>
       </div>
       <button class="show-link-btn" @click="showLink"><font-awesome-icon icon="fa-solid fa-bars " /></button>
-    </nav>
+    </nav> -->
+    <NavComponent />
     <router-view />
   </div>
 </template>
 
 <script>
-
+import NavComponent from './components/Navbar.vue'
 export default {
   name: "App",
+  components: {
+    NavComponent
+  }
 };
 </script>
 
@@ -46,7 +50,7 @@ html {
 // }
 
 nav {
-  background-color: black;
+  // background-color: black;
   display: flex;
   align-items: center;
   padding: 1.5em 1em;

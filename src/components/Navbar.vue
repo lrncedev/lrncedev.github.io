@@ -1,5 +1,5 @@
 <template>
-  <nav id="navbar">
+  <nav>
     <div class="logo">
       <a href="#navbar">
         <img
@@ -8,14 +8,26 @@
           class="logoImg"/>
       </a>
     </div>
-    <div class="navlinks">
+    <div class="navlinks" >
       <a class="nav-link" href="#hero">Home</a>
       <a class="nav-link" href="#techstack">Tech Stack</a>
       <a class="nav-link" href="#projects">Projects</a>
       <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
       <a class="nav-link" href="#contact">Contact</a>
     </div>
-    <button class="showLinks" @click="showLink"><font-awesome-icon icon="fa-solid fa-bars " /></button>
+    <button class="btn-show" @click="show"><font-awesome-icon icon="fa-solid fa-bars " /></button>
+    <div class="modal" v-if="shown">
+      <div class="modal-close">
+        <font-awesome-icon icon="fas fa-times-circle" @click="show"/>
+      </div>
+      <div class="modal-links" >
+        <a class="nav-link" href="#hero">Home</a>
+        <a class="nav-link" href="#techstack">Tech Stack</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -24,101 +36,99 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Navbar",
+  data() {
+    return {
+      shown: false
+    }
+  },
   methods: {
-    showLink() {
-      const navlink = document.querySelector('.navlinks');
-      navlink.classList.toggle("active");
-
-      const links = document.querySelectorAll('.nav-link');
-      links.forEach(link => {
-        link.addEventListener('click', function(){
-          navlink.classList.remove('active');
-        })
-      })
+    show() {
+      this.shown = !this.shown;
     }
   }
 };
 </script>
 
-<style>
-/* * {
-  outline: 1px solid white;
-} */
-.achievements {
-  background-color: red;
-}
+<style lang="scss">
+
 nav {
-  background-color: black;
   display: flex;
-  align-items: center;
-  padding: 1em;
-}
-button {
-  border: none;
-  background: transparent;
-  color: white;
-  font-size: 1.5rem;
-  display: none;
-}
 
-.navlinks a{
-  padding: .5rem .2rem;
-  color: white;
-  margin-right: .5rem;
-  font-size: 1.3em;
-}
-.navlinks a:hover {
-  border-bottom: 1px solid white;
-}
+  .logo {
+    flex-grow: 1;
 
-.logo {
-  flex-grow: 1;
-}
-.logoImg {
-  height: 40px;
-}
-
-.links {
-  display: flex;
-}
-
-
-@media screen and (max-width: 40em) {
-  nav {
-    position: relative;
+    .logoImg {
+      height: 40px;
+    }
   }
+
   .navlinks {
     display: none;
-  }
-  .showLinks {
-    display: block;
-  }
-}
+    margin-right: 1em;
 
-@media screen and (max-width: 40em) {
-  nav {
-    padding-left: 0;
+    .nav-link {
+      color: black;
+    }
   }
-  .navlinks.active {
-    background-color: rgba(0, 0, 0, 0.6);
+
+  .btn-show {
+    border: none;
+    background-color: transparent;
+    font-size: 130%;
+    color: black;
+  }
+  
+  .modal {
+    width: 100%;
+    background-color: rgb(17, 11, 11);
+    height: 100vh;
     position: absolute;
+    top: 0;
     left: 0;
+    color: white;
+    font-size: 180%;
+    padding: 2em 1em;
+    
     display: flex;
     flex-direction: column;
-    width: 100%;
-    top: 100%;
-    /* margin-left: em; */
-    text-transform: uppercase;
-  }
-  .navlinks.active a {
-    padding: .5em 0;
-    font-size: 1.2rem;
-    margin-left: .5rem;
-  }
-  .navlinks.active a:hover {
-    background-color: rgb(50, 50, 50);
+
+    .modal-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 1em 1em 0 0 ;
+    }
+
+    .modal-links {
+      
+      margin-top: 2em;
+      
+      display: flex;
+      width: 60%;
+      margin-inline: auto;
+      flex-direction: column;
+      text-align: center;
+      gap: .6em;
+
+      a {
+        color: white; 
+        border-bottom: 2px solid white;
+      }
+    }
   }
 }
 
 
+@media screen and (min-width: 40em) {
+  nav {
+
+    .navlinks {
+      display: block;
+    }
+    
+    .btn-show, .modal {
+      display: none;
+    }
+  }
+}
 </style>
