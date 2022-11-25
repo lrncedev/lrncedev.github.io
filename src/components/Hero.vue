@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="hero" id="hero">
+  <!-- <div class="hero" id="hero">
     <div class="heroText">
       <h1 class="owner">Hi, im Laurence</h1>
       <h3 class="ownerTitle">Front-End Web Developer</h3>
@@ -8,24 +8,58 @@
         An Information Technology Graduate, IT Educator, and a Gamer.
       </p>
       <div class="cta">
-        <!-- <a href="~" class="resumeBtn" download>Download Resume</a> -->
-        <a :href="`${publicPath}Cadag_Laurence_Resume.pdf`" download="LaurenceCadag_resume" class="resumeBtn">Download resume</a>
+        <a
+          :href="`${publicPath}Cadag_Laurence_Resume.pdf`"
+          download="LaurenceCadag_resume"
+          class="resumeBtn"
+          >Download resume</a
+        >
       </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class="hero">
+      <h5>Hi, i am</h5>
+      <h1>Laurence Cadag</h1>
+      <h3>Vue JS Developer</h3>
+      <h4>
+        IT educator, gamer by heart, <br />
+        and a web developer fascinated by Vue
+      </h4>
+      <button>Contact Me</button>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "HeroSection",
-  data () {
-  return {
-    publicPath: process.env.BASE_URL
-  }
-}
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+    };
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
+.container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hero {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 80vh;
+    margin: 0 auto;
+    color: #eee;
+  }
+}
 /* .hero {
   height: 100%;
 }
@@ -41,14 +75,15 @@ export default {
   }
 } */
 
-.hero {
+/* .hero {
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.8)),
     url("../assets/background.jpg");
-  height: 90vh;
+  height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -78,9 +113,7 @@ export default {
   font-weight: 200;
   text-shadow: 2px 1px 0px rgba(0, 0, 0, 1);
 }
-/* .resumeBtn {
-  padding
-} */
+
 .resumeBtn {
   padding: 0.5rem;
   font-weight: 900;
@@ -108,5 +141,5 @@ export default {
   .ownerDescription {
     font-size: 1.5rem;
   }
-}
+} */
 </style>

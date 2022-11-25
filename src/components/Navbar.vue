@@ -5,22 +5,31 @@
         <img
           src="../assets/android-chrome-512x512.png"
           alt="Logo"
-          class="logoImg"/>
+          class="logoImg"
+        />
       </a>
     </div>
-    <div class="navlinks" >
-      <a class="nav-link" href="#hero">Home</a>
-      <a class="nav-link" href="#techstack">Tech Stack</a>
-      <a class="nav-link" href="#projects">Projects</a>
+    <div class="navlinks">
+      <a class="nav-link" href="">Home</a>
+      <a class="nav-link" href="">Tech Stack</a>
+      <a class="nav-link" href="">Projects</a>
       <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
-      <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-link" href="">Contact</a>
     </div>
-    <button class="btn-show" @click="show"><font-awesome-icon icon="fa-solid fa-bars " /></button>
+    <button class="btn-show" @click="show">
+      <font-awesome-icon icon="fa-solid fa-bars " />
+    </button>
+    <a
+      :href="`${publicPath}Cadag_Laurence_Resume.pdf`"
+      download="LaurenceCadag_resume"
+      class="resumeBtn"
+      >Resume</a
+    >
     <div class="modal" v-if="shown">
       <div class="modal-close">
-        <font-awesome-icon icon="fas fa-times-circle" @click="show"/>
+        <font-awesome-icon icon="fas fa-times-circle" @click="show" />
       </div>
-      <div class="modal-links" >
+      <div class="modal-links">
         <a class="nav-link" href="#hero">Home</a>
         <a class="nav-link" href="#techstack">Tech Stack</a>
         <a class="nav-link" href="#projects">Projects</a>
@@ -32,31 +41,31 @@
 </template>
 
 <script>
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Navbar",
   data() {
     return {
-      shown: false
-    }
+      shown: false,
+      publicPath: process.env.BASE_URL,
+    };
   },
   methods: {
     show() {
       this.shown = !this.shown;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-
 nav {
+  padding: 0.5em;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   .logo {
-    flex-grow: 1;
-
     .logoImg {
       height: 40px;
     }
@@ -67,17 +76,35 @@ nav {
     margin-right: 1em;
 
     .nav-link {
-      color: black;
+      color: #eee;
+      font-size: 130%;
     }
   }
 
   .btn-show {
     border: none;
     background-color: transparent;
-    font-size: 130%;
-    color: black;
+    font-size: 120%;
+    color: $color-accent;
+    order: 2;
   }
-  
+
+  .resumeBtn {
+    color: $color-accent;
+    font-weight: 400;
+    padding: 0.4em;
+    border: 2px solid rgb(215, 215, 215);
+    border-radius: 3px;
+    text-transform: none;
+    background-color: transparent;
+  }
+
+  .resumeBtn:hover {
+    background-color: $color-accent;
+    border: 2px solid rgb(215, 215, 215);
+    color: $bg-main;
+  }
+
   .modal {
     width: 100%;
     background-color: rgb(17, 11, 11);
@@ -88,7 +115,7 @@ nav {
     color: white;
     font-size: 180%;
     padding: 2em 1em;
-    
+
     display: flex;
     flex-direction: column;
 
@@ -96,37 +123,37 @@ nav {
       position: absolute;
       top: 0;
       right: 0;
-      margin: 1em 1em 0 0 ;
+      margin: 1em 1em 0 0;
     }
 
     .modal-links {
-      
       margin-top: 2em;
-      
+
       display: flex;
       width: 60%;
       margin-inline: auto;
       flex-direction: column;
       text-align: center;
-      gap: .6em;
+      gap: 0.6em;
 
       a {
-        color: white; 
+        color: white;
         border-bottom: 2px solid white;
       }
     }
   }
 }
 
-
 @media screen and (min-width: 40em) {
   nav {
-
     .navlinks {
-      display: block;
+      display: flex;
+      gap: 0.8em;
+      font-size: 120%;
     }
-    
-    .btn-show, .modal {
+
+    .btn-show,
+    .modal {
       display: none;
     }
   }
