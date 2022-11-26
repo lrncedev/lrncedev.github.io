@@ -20,11 +20,32 @@ html {
 /* VARIABLES*/
 $bg-main: black;
 $color-accent: #00FF43;
+$accent-fade: #00ff44a8;
+$w-90: 90%;
+$w-80: 80%;
+$w-60: 60%;
 
 body {
   background-color: $bg-main;
 }
 
+.cta:hover {
+  background-color: $color-accent;
+  border: 2px solid rgb(215, 215, 215);
+  color: $bg-main;
+  font-weight: 700;
+}
+
+
+.w-90 {
+  width: $w-90;
+  margin: 0 auto;
+}
+
+.w-80 {
+  width: 100%;
+  margin: 0 auto;
+}
 // nav {
 //   display: flex;
 //   align-items: center;

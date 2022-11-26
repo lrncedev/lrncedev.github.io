@@ -27,111 +27,58 @@
       <div class="vl"></div>
     </div>
     <HeroSection />
+    <AboutMe />
   </div>
 </template>
 
 <script>
 import HeroSection from "./components/Hero.vue";
 import NavComponent from "./components/Navbar.vue";
+import AboutMe from "./components/AboutMe.vue";
 export default {
   name: "App",
   components: {
     NavComponent,
     HeroSection,
+    AboutMe,
   },
 };
 </script>
 
 <style lang="scss">
 .socials {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 10%;
+  right: 7%;
   display: flex;
+  width: 5%;
   align-items: center;
   flex-direction: column;
 
   ul {
     li {
       width: 100%;
+      color: #eee;
+      padding: 0.5em;
+      border: 2px solid $accent-fade;
     }
   }
   .socialIcon {
     color: #eee;
-    padding: 0.5em;
-    border: 2px solid $color-accent;
   }
 
   .vl {
     margin-top: 1em;
-    border-left: 2px solid $color-accent;
+    border-left: 2px solid $accent-fade;
     height: 100px;
   }
 }
-// @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 
-// html {
-//   scroll-behavior: smooth;
-// }
-
-// *,
-// *::before,
-// *::after{
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   list-style-type: none;
-//   text-decoration: none;
-//   font-family: "Lato", sans-serif;
-// }
-
-// // #app {
-// //   background-color: black;
-// // }
-
-// nav {
-//   // background-color: black;
-//   display: flex;
-//   align-items: center;
-//   padding: 1.5em 1em;
-//   height: 60px;
-
-//   .logo-router {
-//     flex-grow: 1;
-//     .logo-img {
-//       height: 40px;
-//     }
-//   }
-
-//   .links {
-//     display: flex;
-//     gap: .8em;
-//     margin-right: 1em;
-
-//     a {
-//       color: white;
-//     }
-//   }
-
-//   .show-link-btn {
-//     border: none;
-//     background: transparent;
-//     color: white;
-//     font-size: 1.5rem;
-//     display: none;
-//   }
-// }
-
-// @media screen and (max-width: 40em) {
-//   nav {
-//     position: relative;
-
-//     .links {
-//     display: none;
-//     }
-//     .show-link-btn {
-//       display: block;
-//     }
-//   }
-// }
+@media screen and (min-width: 40em) {
+  .socials {
+    position: fixed;
+    bottom: 0;
+    left: 7%;
+  }
+}
 </style>

@@ -11,7 +11,7 @@
     </div>
     <div class="navlinks">
       <a class="nav-link" href="">Home</a>
-      <a class="nav-link" href="">Tech Stack</a>
+      <a class="nav-link" href="#techstack">Tech Stack</a>
       <a class="nav-link" href="">Projects</a>
       <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
       <a class="nav-link" href="">Contact</a>
@@ -22,7 +22,7 @@
     <a
       :href="`${publicPath}Cadag_Laurence_Resume.pdf`"
       download="LaurenceCadag_resume"
-      class="resumeBtn"
+      class="cta resumeBtn"
       >Resume</a
     >
     <div class="modal" v-if="shown">
@@ -30,7 +30,7 @@
         <font-awesome-icon icon="fas fa-times-circle" @click="show" />
       </div>
       <div class="modal-links">
-        <a class="nav-link" href="#hero">Home</a>
+        <!-- <a class="nav-link" href="#hero">Home</a> -->
         <a class="nav-link" href="#techstack">Tech Stack</a>
         <a class="nav-link" href="#projects">Projects</a>
         <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
@@ -60,6 +60,7 @@ export default {
 
 <style lang="scss">
 nav {
+  background-color: rgb(23, 23, 23);
   padding: 0.5em;
   display: flex;
   justify-content: space-between;
@@ -76,8 +77,8 @@ nav {
     margin-right: 1em;
 
     .nav-link {
-      color: #eee;
-      font-size: 130%;
+      color: rgb(188, 188, 188);
+      font-size: clamp(0.9rem, 2vw, 1.3rem);
     }
   }
 
@@ -93,16 +94,10 @@ nav {
     color: $color-accent;
     font-weight: 400;
     padding: 0.4em;
-    border: 2px solid rgb(215, 215, 215);
+    border: 2px solid rgb(151, 151, 151);
     border-radius: 3px;
     text-transform: none;
     background-color: transparent;
-  }
-
-  .resumeBtn:hover {
-    background-color: $color-accent;
-    border: 2px solid rgb(215, 215, 215);
-    color: $bg-main;
   }
 
   .modal {
