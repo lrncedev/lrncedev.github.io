@@ -1,103 +1,30 @@
 <template>
-  <div class="projectSection" id="projects">
-    <h2 class="sectionTitle">PROJECTS</h2>
-    <div class="projectGrid">
-      <div class="card">
-        <div class="cardImg">
-          <img loading="lazy"
-            src="../assets/ecommerce.png"
-            class="card-img-top"
-            alt="Thumbnail Image for Storey, an Ecommerce site"
-          />
-        </div>
-        <div class="cardBody">
-          <h5 class="card-title text-center">Storey - ECommerce App</h5>
-          <p class="card-text">
-            An ecommerce app built with HTML, CSS, and JavaScript
-          </p>
-          <div class="projectLink">
-            <a href="https://lrncedev.github.io/eCommerceApp/" target="_blank"
-              >Demo</a
-            >
-            <a href="https://github.com/lrncedev/eCommerceApp" target="_blank"
-              >Github</a
-            >
-        </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cardImg">
-          <img loading="lazy"
-            src="../assets/rio.png"
-            class="card-img-top"
-            alt="Thumbnail for Rio De Janeiro Project"
-          />
-        </div>
-        <div class="cardBody">
-          <h5 class="card-title">Rio de Janeiro</h5>
-          <p class="card-text">
-            An landing page built with HTML, CSS, and JavaScript
-          </p>
-          <div class="projectLink">
-            <a
-              href="https://lrncedev.github.io/odinLandingPage/"
-              target="_blank"
-              >Demo</a
-            >
-            <a
-              href="https://github.com/lrncedev/odinLandingPage"
-              target="_blank"
-              >Github</a
-            >
-        </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cardImg">
-          <img loading="lazy"
-            src="../assets/recipe-app.png"
-            class="card-img-top"
-            alt="Thumbnail for Recipe-App"
-          />
-        </div>
-        <div class="cardBody">
-          <h5 class="card-title">Recipe app</h5>
-          <p class="card-text">
-            Site that consumes API to gather recipes on ingredient searching.
-          </p>
-          <div class="projectLink">
-            <a href="https://lrncedev.github.io/recipe-app/" target="_blank"
-              >Demo</a
-            >
-            <a href="https://github.com/lrncedev/recipe-app" target="_blank"
-              >Github</a
-            >
+  <div class="box" id="projects">
+    <h2>Projects built</h2>
+    <div class="project-grid">
+      <div class="project-card" v-for="project in projects" :key="project.id">
+        <img :src="project.img" alt="project image" class="project-img" />
+        <div class="project-text">
+          <h3>{{ project.title }}</h3>
+          <div class="project-description">
+            <p>
+              {{ project.description }}
+            </p>
           </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cardImg">
-          <img  loading="lazy"
-            src="../assets/pokemon-app.png"
-            class="card-img-top"
-            alt="pokemon-app"
-          />
-        </div>
-        <div class="cardBody">
-          <h5 class="card-title">Pokemon App using REST API</h5>
-          <p class="card-text">
-            Classic PokeDex
-          </p>
-          <div class="projectLink">
-            <a href="https://lrncedev.github.io/pokemon-app/" disable target="_blank"
-              >Demo</a
-            >
-            <a href="https://github.com/lrncedev/pokemon-app" disable target="_blank"
-              >Github</a
-            >
+          <div class="project-stack">
+            <ul>
+              <li v-for="stack in project.stacks" :key="stack">
+                <span>{{ stack }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="project-link">
+            <a :href="project.demo" target="_blank"
+              ><font-awesome-icon icon="fas fa-laptop-code"
+            /></a>
+            <a :href="project.github" target="_blank"
+              ><font-awesome-icon icon="fab fa-github"
+            /></a>
           </div>
         </div>
       </div>
@@ -108,122 +35,189 @@
 <script>
 export default {
   name: "ProjectSection",
+  data() {
+    return {
+      projects: [
+        {
+          id: 1,
+          img: require("../assets/todo-app.png"),
+          title: "Todo App",
+          description: "Todo App using Vue Js and Local Storage",
+          github: "https://github.com/lrncedev/todo-app-vue",
+          demo: "https://lrncedev.github.io/todo-app-vue/",
+          stacks: ["Vue", "Vue-router", "SCSS", "Local Storage"],
+        },
+        {
+          id: 2,
+          img: require("../assets/pokemon-app.png"),
+          title: "Pokemon App",
+          description: "API consuming app from PokeApi.co",
+          github: "https://github.com/lrncedev/pokemon-app",
+          demo: "https://lrncedev.github.io/pokemon-app/",
+          stacks: ["Vue", "PokeAPI", "SCSS"],
+        },
+      ],
+    };
+  },
 };
 </script>
 
-<style scoped>
-.projectSection {
-  background-color: #eee;
-  padding: 2rem;
-}
-.sectionTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-.projectGrid {
-  display: grid;
-  gap: 1em;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-.card {
-  display: flex;
-  background-color: #333;
-  color: white;
-  transition: scale 1s;
-}
+<style lang="scss">
+.box {
+  color: #ffffff;
 
-.card > * {
-  flex-basis: 100%;
-}
-
-.card-img-top {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: scale 1s;
-}
-.card:hover {
-  scale: 1.03;
-}
-
-/* .card-img-top:hover {
-  scale: 1.05;
-  object-fit: fill;
-} */
-
-.cardBody {
-  padding: .5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.cardBody > * {
-  margin-bottom: .3em;
-}
-.card-title {
-  text-transform: uppercase;
-  text-align: left;
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-
-.card-text {
-  font-size: 0.9rem;
-  font-weight: 300;
-  text-align: justify;
-  /* padding: 0 0.4rem; */
-}
-
-.projectLink {
-  display: flex;
-  /* justify-content: space-evenly; */
-  padding: .5em 0;
-  gap: 1em;
-}
-
-.projectLink a {
-  margin-top: .5em;
-  padding: .3em;
-  border-radius: 4px;
-  background-color: green;
-  color: white;
-}
-
-@media screen and (min-width: 40em) {
-  .projectGrid {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  h2 {
+    padding-left: 1.5rem;
+    font-size: clamp(1.9rem, 2.5vw, 2.5rem);
+    font-weight: 300;
   }
+  .project-grid {
+    padding: 0 1.5em;
+    display: grid;
+    grid-auto-rows: 400px;
 
-  .card {
-    flex-direction: column;
-    justify-content: space-evenly;
+    .project-card {
+      margin: 1em 0;
+      gap: 1.2em;
+      position: relative;
+
+      .project-img {
+        width: 100%;
+        margin-top: auto;
+        background-image: linear-gradient(
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.78)
+        );
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .project-img:hover {
+        background-image: linear-gradient(
+          rgba(255, 243, 243, 0.6),
+          rgba(255, 255, 255, 0.78)
+        );
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .project-text {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.9rem;
+        background-color: rgba(10, 9, 9, 0.8);
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        height: 100%;
+        text-align: right;
+
+        h3 {
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: clamp(2.5rem, 1.5vw, 3.2rem);
+        }
+        .project-description {
+          padding: 0.8em 0.5em;
+
+          font-size: clamp(1.6rem, 1.5vw, 3.2rem);
+          background-color: rgba(46, 46, 46, 0.9);
+        }
+        .project-stack {
+          ul {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.9rem;
+
+            li {
+              font-weight: 400;
+              color: $color-accent;
+            }
+          }
+        }
+
+        .project-link {
+          display: flex;
+          gap: 1.2em;
+          justify-content: flex-end;
+
+          a {
+            color: #eee;
+            border: 1px solid $color-accent;
+            border-radius: 4px;
+            padding: 0.4em;
+            font-size: clamp(1.1rem, 1.3vh, 1.3rem);
+          }
+        }
+      }
+    }
+
+    .project-card:nth-child(even) {
+      .project-text {
+        align-items: center;
+
+        .project-stack {
+          ul {
+            display: flex;
+            justify-content: flex-start;
+            gap: 0.9rem;
+
+            li {
+              font-weight: 400;
+              color: $color-accent;
+            }
+          }
+        }
+
+        .project-link {
+          justify-content: flex-start;
+        }
+      }
+    }
   }
-
-  /* .card:first-child {
-    height: 100%;
-  } */
 }
 
-@media screen and (min-width: 45em) {
-  .projectGrid {
-    grid-template-columns: repeat(4, minmax(150px, 1fr));
-    grid-template-rows: 1fr;
-    gap: 1em;
-  }
-}
-@media screen and (max-width: 360px) {
-  .projectLink  {
-    flex-direction: column;
-  }
+@media screen and (min-width: 50em) {
+  .box {
+    .project-grid {
+      .project-card {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        position: relative;
+        width: 100%;
 
-  .projectLink a {
-    border-radius: 0;
-    text-align: center;
-    text-transform: uppercase;
+        .project-text {
+          width: 50%;
+          right: 0;
+          align-items: flex-end;
+        }
+      }
+      .project-card:nth-child(even) {
+        grid-template-columns: 40% 60%;
+        .project-img {
+          order: 2;
+        }
+        .project-text {
+          align-items: flex-start;
+          width: 100%;
+          text-align: left;
+          position: static;
+          order: 1;
+
+          .project-stack {
+            ul {
+              justify-content: flex-start;
+            }
+          }
+
+          .project-link {
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
   }
 }
 </style>

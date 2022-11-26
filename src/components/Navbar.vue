@@ -10,9 +10,9 @@
       </a>
     </div>
     <div class="navlinks">
-      <a class="nav-link" href="">Home</a>
-      <a class="nav-link" href="#techstack">Tech Stack</a>
-      <a class="nav-link" href="">Projects</a>
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="#techstacks">Tech Stack</a>
+      <a class="nav-link" href="#projects">Projects</a>
       <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
       <a class="nav-link" href="">Contact</a>
     </div>
