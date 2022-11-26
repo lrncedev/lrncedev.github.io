@@ -46,49 +46,9 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-// nav {
-//   display: flex;
-//   align-items: center;
-//   padding: 1.5em 1em;
-//   height: 60px;
 
-//   .logo-router {
-//     flex-grow: 1;
-
-//     .logo-img {
-//       height: 40px;
-//     }
-//   }
-
-//   .links {
-//     display: flex;
-//     gap: .8em;
-//     margin-right: 1em;
-
-//     a {
-//       color: white;
-//     }
-//   }
-
-//   .show-link-btn {
-//     border: none;
-//     background: transparent;
-//     color: white;
-//     font-size: 1.5rem;
-//     display: none;
-//   }
-// }
-
-// @media screen and (max-width: 40em) {
-//   nav {
-//     position: relative;
-
-//     .links {
-//       display: none;
-//     }
-
-//     .show-link-btn {
-//       display: block;
-//     }
-//   }
-// }
+.box {
+  padding: 1.5em 1em;
+  width: 80%;
+  margin: 0 auto;
+}

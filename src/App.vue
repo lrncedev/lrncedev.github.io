@@ -28,6 +28,7 @@
     </div>
     <HeroSection />
     <AboutMe />
+    <ProjectSection />
   </div>
 </template>
 
@@ -35,12 +36,14 @@
 import HeroSection from "./components/Hero.vue";
 import NavComponent from "./components/Navbar.vue";
 import AboutMe from "./components/AboutMe.vue";
+import ProjectSection from "./components/ProjectSection.vue";
 export default {
   name: "App",
   components: {
     NavComponent,
     HeroSection,
     AboutMe,
+    ProjectSection,
   },
 };
 </script>

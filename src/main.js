@@ -26,7 +26,7 @@ import {
   faPhp,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
 library.add(
@@ -45,6 +45,7 @@ library.add(
   faNodeJs,
   faNode,
   faPhp,
-  faTimesCircle
+  faTimesCircle,
+  faLaptopCode
 );
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
