@@ -29,6 +29,10 @@
     <HeroSection />
     <AboutMe />
     <ProjectSection />
+    <ContactForm />
+    <footer>
+      <span class="copyright">@LrnceDev. All rights reserved. 2022.</span>
+    </footer>
   </div>
 </template>
 
@@ -37,6 +41,8 @@ import HeroSection from "./components/Hero.vue";
 import NavComponent from "./components/Navbar.vue";
 import AboutMe from "./components/AboutMe.vue";
 import ProjectSection from "./components/ProjectSection.vue";
+import ContactForm from "./components/ContactForm.vue";
+
 export default {
   name: "App",
   components: {
@@ -44,6 +50,7 @@ export default {
     HeroSection,
     AboutMe,
     ProjectSection,
+    ContactForm,
   },
 };
 </script>
@@ -63,7 +70,8 @@ export default {
       width: 100%;
       color: #eee;
       padding: 0.5em;
-      border: 2px solid $accent-fade;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      border: 4px solid $color-accent;
     }
   }
   .socialIcon {
@@ -72,9 +80,15 @@ export default {
 
   .vl {
     margin-top: 1em;
-    border-left: 2px solid $accent-fade;
+    border-left: 4px solid $color-accent;
     height: 100px;
   }
+}
+
+footer {
+  padding: 1em;
+  text-align: center;
+  color: #eee;
 }
 
 @media screen and (min-width: 40em) {

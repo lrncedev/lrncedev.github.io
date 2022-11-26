@@ -3,30 +3,6 @@
   <footer>
     <div class="socials">
       <h2 class="message">Follow or Contact Me:</h2>
-      <ul class="socialLinks">
-        <li>
-          <a href="https://github.com/lrncedev" target="_blank" class="link"
-            ><font-awesome-icon
-              icon="fa-brands fa-github"
-              class="socialIcon"
-          /></a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/laurencecadag/"
-            target="_blank"
-            class="link"
-            ><font-awesome-icon
-              icon="fa-brands fa-linkedin-in"
-              class="socialIcon"
-          /></a>
-        </li>
-        <li>
-          <a href="https://codepen.io/LaurenceDev" target="_blank" class="link"
-            ><font-awesome-icon icon="fa-brands fa-codepen" class="socialIcon"
-          /></a>
-        </li>
-      </ul>
     </div>
     <div>
       <span class="copyright">@LrnceDev. All rights reserved. 2022.</span>

@@ -121,6 +121,7 @@ export default {
         }
         .project-description {
           padding: 0.8em 0.5em;
+          text-align: center;
 
           font-size: clamp(1.6rem, 1.5vw, 3.2rem);
           background-color: rgba(46, 46, 46, 0.9);
@@ -148,7 +149,7 @@ export default {
             border: 1px solid $color-accent;
             border-radius: 4px;
             padding: 0.4em;
-            font-size: clamp(1.1rem, 1.3vh, 1.3rem);
+            font-size: clamp(1.3rem, 1.5vh, 1.6rem);
           }
         }
       }
@@ -189,8 +190,10 @@ export default {
         width: 100%;
 
         .project-text {
-          width: 50%;
-          right: 0;
+          width: 100%;
+          text-align: left;
+          position: static;
+          order: 1;
           align-items: flex-end;
         }
       }

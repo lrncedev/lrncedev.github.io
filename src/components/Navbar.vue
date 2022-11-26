@@ -14,7 +14,7 @@
       <a class="nav-link" href="#techstacks">Tech Stack</a>
       <a class="nav-link" href="#projects">Projects</a>
       <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
-      <a class="nav-link" href="">Contact</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
     <button class="btn-show" @click="show">
       <font-awesome-icon icon="fa-solid fa-bars " />

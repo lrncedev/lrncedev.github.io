@@ -6,10 +6,11 @@
       <h1>Laurence Cadag</h1>
       <h2>Vue JS Developer</h2>
       <h4>
-        Utilizes Vue JS for fast, easy, <br />
+        I build things for the web using <br />
+        Using Vue JS for fast, easy, <br />
         and reactive development.
       </h4>
-      <a href="" class="contact cta">Contact Me</a>
+      <a href="#contact" class="contact cta">Hire Me</a>
     </div>
   </div>
 </template>
@@ -48,20 +49,20 @@ export default {
     color: #eee;
 
     h5 {
-      font-size: clamp(1.2rem, 3.5vw, 3.5rem);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
       font-weight: 300;
       color: #eee;
     }
 
     h1 {
-      font-size: clamp(3.4rem, 5.5vw, 4.5rem);
+      font-size: clamp(3.5rem, 5.9vw, 4.8rem);
       font-weight: 900;
     }
 
     h2 {
       color: $color-accent;
       font-weight: 400;
-      font-size: clamp(2.8rem, 4.5vw, 3.5rem);
+      font-size: clamp(3rem, 4.5vw, 3.5rem);
     }
 
     h4 {
@@ -86,6 +87,7 @@ export default {
   .container {
     .hero {
       width: 60%;
+      align-items: center;
     }
   }
 }

@@ -19,12 +19,12 @@
         <div id="stacks">
           <ul>
             <li>JavaScript (ES6)</li>
-            <li>Vue JS</li>
             <li>Quasar</li>
+            <li>MongoDB</li>
           </ul>
           <ul>
             <li>Node JS</li>
-            <li>Express JS</li>
+            <li>Express</li>
             <li>PHP</li>
           </ul>
         </div>
@@ -48,7 +48,7 @@ export default {
     padding: 1.5em 1em;
     display: grid;
     grid-template-columns: 1fr;
-    color: #eee;
+    color: rgb(249, 246, 246);
 
     .about-me-txt {
       padding: 0.5em 0;
@@ -56,7 +56,7 @@ export default {
       h2 {
         font-weight: 900;
         font-size: clamp(1.5em, 2.5vw, 3.5rem);
-        color: rgb(183, 183, 183);
+        color: rgb(232, 228, 228);
         margin-bottom: 0.9rem;
       }
       h3 {
@@ -66,12 +66,12 @@ export default {
         margin-bottom: 1.2em;
       }
       span {
-        color: $accent-fade;
+        color: $color-accent;
         font-weight: 700;
       }
 
       span:hover {
-        color: $color-accent;
+        font-size: 110%;
       }
 
       .tech-intro {
