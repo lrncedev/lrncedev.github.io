@@ -10,20 +10,18 @@
       </a>
     </div>
     <div class="navlinks">
-      <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="#techstacks">Tech Stack</a>
       <a class="nav-link" href="#projects">Projects</a>
-      <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
       <a class="nav-link" href="#contact">Contact</a>
     </div>
     <button class="btn-show" @click="show">
       <font-awesome-icon icon="fa-solid fa-bars " />
     </button>
     <a
-      :href="`${publicPath}Cadag_Laurence_Resume.pdf`"
-      download="LaurenceCadag_resume"
+      :href="`${publicPath}LAURENCE_CADAG_CV.pdf`"
+      download="LAURENCE_CADAG_CV"
       class="cta resumeBtn"
-      >Resume</a
+      >Download CV</a
     >
     <div class="modal" v-if="shown">
       <div class="modal-close">
