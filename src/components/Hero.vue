@@ -32,7 +32,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.92)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.69)),
     url("../assets/background.jpg");
   height: calc(100vh - 60px);
   background-repeat: no-repeat;
@@ -61,7 +61,7 @@ export default {
 
     h2 {
       color: $color-accent;
-      font-weight: 400;
+      font-weight: 500;
       font-size: clamp(3rem, 4.5vw, 3.5rem);
     }
 
