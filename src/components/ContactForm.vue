@@ -2,7 +2,7 @@
   <div class="w-80">
     <div class="contact-form" id="contact">
       <h1>Get in touch</h1>
-      <form>
+      <form autocomplete="off">
         <div class="grid-1">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" />
