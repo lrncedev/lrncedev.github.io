@@ -1,6 +1,6 @@
 <template>
   <div class="box" id="projects">
-    <h2>Projects built</h2>
+    <h2>Projects</h2>
     <div class="project-grid">
       <div class="project-card" v-for="project in projects" :key="project.id">
         <img :src="project.img" alt="project image" class="project-img" />
@@ -55,6 +55,15 @@ export default {
           github: "https://github.com/lrncedev/pokedex",
           demo: "https://lrncedev.github.io/pokedex/",
           stacks: ["Vue", "PokeAPI", "SCSS", "Vue Router"],
+        },
+        {
+          id: 3,
+          img: require("../assets/commercial.png"),
+          title: "Ecommerce App",
+          description: "Ecommerce using FakeStore API",
+          github: "https://github.com/lrncedev/fakestore",
+          demo: "https://lrncedev.github.io/fakestore/",
+          stacks: ["Tailwind", "REST API", "JS"],
         },
       ],
     };
