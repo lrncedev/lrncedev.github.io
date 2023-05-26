@@ -18,11 +18,6 @@
               class="socialIcon"
           /></a>
         </li>
-        <li>
-          <a href="https://codepen.io/LaurenceDev" target="_blank" class="link"
-            ><font-awesome-icon icon="fa-brands fa-twitter" class="socialIcon"
-          /></a>
-        </li>
       </ul>
       <div class="vl"></div>
     </div>
@@ -30,9 +25,6 @@
     <AboutMe />
     <ProjectSection />
     <ContactForm />
-    <footer>
-      <span class="copyright">@LrnceDev. All rights reserved. 2022.</span>
-    </footer>
   </div>
 </template>
 
