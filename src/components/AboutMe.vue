@@ -4,21 +4,20 @@
       <div class="about-me-txt" id="techstacks">
         <h2>About me</h2>
         <h3>
-          Hello! I am Laurence Cadag, a Vue JS developer. Currently an educator,
+          I am Laurence, a Vue JS developer. Currently an educator,
           that teaches the holy trinity of the web: <br /><span>HTML</span>,
           <span>CSS</span>, and <span>JavaScript</span>.
         </h3>
         <h3>
           I also teach back-end languages such as <span>PHP</span>, and
-          <span>Laravel</span>. Of course, i wont forget you <span>SQL</span>.
-          😁.
+          <span>Laravel</span>.
         </h3>
         <p class="tech-intro">
           Additionally, here are some of the technologies im currently using:
         </p>
         <div id="stacks">
           <ul>
-            <li>JavaScript (ES6)</li>
+            <li>Laravel</li>
             <li>Quasar</li>
             <li>MongoDB</li>
           </ul>
@@ -26,6 +25,10 @@
             <li>Node JS</li>
             <li>Express</li>
             <li>PHP</li>
+          </ul>
+          <ul>
+            <li>MySQL</li>
+            <li>Git</li>
           </ul>
         </div>
       </div>
@@ -70,9 +73,9 @@ export default {
         font-weight: 700;
       }
 
-      span:hover {
-        font-size: 110%;
-      }
+      // span:hover {
+      //   font-size: 110%;
+      // }
 
       .tech-intro {
         font-size: clamp(1.3rem, 1.9vw, 1.5rem);
@@ -114,7 +117,7 @@ export default {
   .w-80 {
     .about-me {
       padding: 1.5em 1em;
-      width: 70%;
+      width: 80%;
       padding: 0;
       margin: 0 auto;
 
@@ -127,11 +130,4 @@ export default {
   }
 }
 
-// @media screen and (min-width: 60em) {
-//   .w-80 {
-//     .about-me {
-
-//     }
-//   }
-// }
 </style>
