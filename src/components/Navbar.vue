@@ -12,29 +12,8 @@
     <div class="navlinks">
       <a class="nav-link" href="#techstacks">Tech Stack</a>
       <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#contact">Contact</a>
     </div>
-    <button class="btn-show" @click="show">
-      <font-awesome-icon icon="fa-solid fa-bars " />
-    </button>
-    <a
-      :href="`${publicPath}LAURENCE_CADAG_CV.pdf`"
-      download="LAURENCE_CADAG_CV"
-      class="cta resumeBtn"
-      >Download CV</a
-    >
-    <div class="modal" v-if="shown">
-      <div class="modal-close">
-        <font-awesome-icon icon="fas fa-times-circle" @click="show" />
-      </div>
-      <div class="modal-links">
-        <!-- <a class="nav-link" href="#hero">Home</a> -->
-        <a class="nav-link" href="#techstack">Tech Stack</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <!-- <a class="nav-link achievements" href="#achievements">Achievements</a> -->
-        <a class="nav-link" href="#contact">Contact</a>
-      </div>
-    </div>
+    
   </nav>
 </template>
 
@@ -58,9 +37,10 @@ export default {
 
 <style lang="scss">
 nav {
-  background-color: rgb(23, 23, 23);
+  background-color:#1B1C22;
   padding: 0.5em;
   display: flex;
+  box-shadow: 1px 1px 5px $accent-fade;
   justify-content: space-between;
   align-items: center;
 
@@ -75,7 +55,7 @@ nav {
     margin-right: 1em;
 
     .nav-link {
-      color: rgb(188, 188, 188);
+      color: #FFFFFF;
       font-size: clamp(0.9rem, 2vw, 1.3rem);
     }
   }
@@ -91,7 +71,7 @@ nav {
   .resumeBtn {
     color: $color-accent;
     font-weight: 400;
-    padding: 0.4em;
+    padding: 0.2em;
     border: 2px solid rgb(151, 151, 151);
     border-radius: 3px;
     text-transform: none;
@@ -99,9 +79,11 @@ nav {
   }
 
   .modal {
+    position: absolute;
+    top: 0;
     width: 100%;
-    background-color: rgb(17, 11, 11);
-    height: 100vh;
+    background-color: black;
+    min-height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -110,6 +92,8 @@ nav {
     padding: 2em 1em;
 
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 
     .modal-close {
@@ -123,12 +107,14 @@ nav {
       margin-top: 2em;
 
       display: flex;
-      width: 60%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
       margin-inline: auto;
       flex-direction: column;
       text-align: center;
       gap: 0.6em;
-
+      min-height: 100%;
       a {
         color: white;
         border-bottom: 2px solid white;
