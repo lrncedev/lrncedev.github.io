@@ -1,9 +1,10 @@
 <template>
-  <div class="box" id="projects">
-    <h2>Projects</h2>
+  <div class="box w-80" id="projects">
+    <h2 style="text-align: center; font-weight: 700; margin-bottom: .5em;" >Projects</h2>
     <div class="project-grid">
-      <div class="project-card" v-for="project in projects" :key="project.id">
-        <img :src="project.img" alt="project image" class="project-img" />
+      <div v-for="project in projects" :key="project.id">
+        <div class="project-card hidden" ref="projectCards">
+          <img :src="project.img" alt="project image" class="project-img" />
         <div class="project-text">
           <h3>{{ project.title }}</h3>
           <div class="project-description">
@@ -26,6 +27,7 @@
               ><font-awesome-icon icon="fab fa-github"
             /></a>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -59,15 +61,40 @@ export default {
         {
           id: 3,
           img: require("../assets/commercial.png"),
-          title: "Ecommerce App",
-          description: "Ecommerce using FakeStore API",
-          github: "https://github.com/lrncedev/fakestore",
+          title: "Commercial",
+          description: "Ecommerce consuming API from FakeStore API",
+          github: "https://github.com/lrncedev/vue-basics",
           demo: "https://lrncedev.github.io/fakestore/",
           stacks: ["Tailwind", "REST API", "JS"],
         },
       ],
     };
   },
+  mounted() {
+    const options = {
+      root: null,
+      rootMargin: '10%',
+      threshold: 0.5
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        entry.target.classList.toggle("show");
+
+        observer.unobserve(entry.target);
+      });
+    }, options);
+    this.$nextTick(() => {
+      const projectCards = this.$refs.projectCards;
+      if (projectCards) {
+        projectCards.forEach(card => {
+          observer.observe(card);
+        });
+      }
+    });
+  }
 };
 </script>
 
@@ -85,6 +112,19 @@ export default {
     display: grid;
     grid-auto-rows: 400px;
 
+    .hidden {
+        opacity: 0;
+        filter: blur(2px);
+        transform: translateX(-50%);
+        transition: 1.5s;
+      }
+
+      .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0%);
+      }
+
     .project-card {
       margin: 1em 0;
       gap: 1.2em;
@@ -92,20 +132,19 @@ export default {
 
       .project-img {
         width: 100%;
+        height: 100%;
+        aspect-ratio: 16/9;
+        object-fit: contain;
         margin-top: auto;
         background-image: linear-gradient(
           rgba(0, 0, 0, 0.6),
           rgba(0, 0, 0, 0.78)
         );
-        background-size: cover;
-        background-repeat: no-repeat;
+        
       }
 
       .project-img:hover {
-        background-image: linear-gradient(
-          rgba(255, 243, 243, 0.6),
-          rgba(255, 255, 255, 0.78)
-        );
+    
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -124,8 +163,7 @@ export default {
         text-align: right;
 
         h3 {
-          text-transform: uppercase;
-          font-weight: 300;
+          font-weight: 500;
           font-size: clamp(2.5rem, 1.5vw, 3.2rem);
         }
         .project-description {
@@ -133,7 +171,11 @@ export default {
           text-align: center;
 
           font-size: clamp(1.6rem, 1.5vw, 3.2rem);
-          background-color: rgba(46, 46, 46, 0.9);
+          border: 2px solid gray;
+
+          p {
+            opacity: .6;
+          }
         }
         .project-stack {
           ul {
@@ -143,7 +185,9 @@ export default {
 
             li {
               font-weight: 400;
-              color: $color-accent;
+              background-color: black;
+              color: white;
+              padding: .4em;
             }
           }
         }
@@ -155,9 +199,9 @@ export default {
 
           a {
             color: #eee;
-            border: 1px solid $color-accent;
+            border: 2px solid $color-accent;
             border-radius: 4px;
-            padding: 0.4em;
+            padding: 0.3em;
             font-size: clamp(1.3rem, 1.5vh, 1.6rem);
           }
         }
@@ -176,7 +220,9 @@ export default {
 
             li {
               font-weight: 400;
-              color: $color-accent;
+              background-color: black;
+              color: white;
+              padding: .4em;
             }
           }
         }
@@ -192,6 +238,19 @@ export default {
 @media screen and (min-width: 50em) {
   .box {
     .project-grid {
+      .hidden {
+        opacity: 0;
+        filter: blur(2px);
+        transform: translateX(-50%);
+        transition: 1.5s;
+      }
+
+      .show {
+        opacity: 1;
+        filter: blur(0);
+        scale: .95;
+        transform: translateX(0%);
+      }
       .project-card {
         display: grid;
         grid-template-columns: 60% 40%;
@@ -221,7 +280,15 @@ export default {
           .project-stack {
             ul {
               justify-content: flex-start;
+
+              li {
+                font-weight: 400;
+                background-color: black;
+                color: white;
+                padding: .4em;
+              }
             }
+            
           }
 
           .project-link {
