@@ -24,7 +24,6 @@
     <HeroSection />
     <AboutMe />
     <ProjectSection />
-    <ContactForm />
   </div>
 </template>
 
@@ -33,7 +32,6 @@ import HeroSection from "./components/Hero.vue";
 import NavComponent from "./components/Navbar.vue";
 import AboutMe from "./components/AboutMe.vue";
 import ProjectSection from "./components/ProjectSection.vue";
-import ContactForm from "./components/ContactForm.vue";
 
 export default {
   name: "App",
@@ -42,7 +40,6 @@ export default {
     HeroSection,
     AboutMe,
     ProjectSection,
-    ContactForm,
   },
 };
 </script>
