@@ -4,8 +4,8 @@
       <div class="about-me-txt" id="techstacks">
         <h2>About me</h2>
         <h3>
-          I am Laurence, a Vue JS developer. Currently an educator,
-          that teaches the holy trinity of the web: <br /><span>HTML</span>,
+          A Vue JS developer and currently an academe educator,
+          that teaches the trio of the web: <br /><span>HTML</span>,
           <span>CSS</span>, and <span>JavaScript</span>.
         </h3>
         <h3>
@@ -15,35 +15,63 @@
         <p class="tech-intro">
           Additionally, here are some of the technologies im currently using:
         </p>
-        <div id="stacks">
-          <ul>
-            <li>Laravel</li>
-            <li>Quasar</li>
-            <li>MongoDB</li>
-          </ul>
-          <ul>
-            <li>Node JS</li>
-            <li>Express</li>
-            <li>PHP</li>
-          </ul>
-          <ul>
-            <li>MySQL</li>
-            <li>Git</li>
-          </ul>
+        
+        <div class="grid" style="margin-top: 1em;">
+          <div v-for="(stack, index) in stacks" :key="index"  ref="gridItems">
+            <div class="grid-item" :class="getAnimationClass(index)">{{ stack }}</div>
+          </div>
         </div>
       </div>
-      <!-- <div class="about-me-img"></div> -->
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "AboutMe",
+  data() {
+    return {
+      stacks: [
+      "Vue JS", "Quasar", "PHP", "Laravel",
+      "Tailwind CSS", "Express JS", "Node", "MySQL", "MongoDB", "Git"
+    ]
+    }
+  },
+  mounted() {
+    const options = {
+      root: null,
+      rootMargin: '-150px',
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        entry.target.classList.toggle("animate");
+        
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    this.$nextTick(() => {
+      const gridItems = this.$refs.gridItems;
+      if (gridItems) {
+        gridItems.forEach(item => {
+          observer.observe(item);
+        });
+      }
+    });
+  },
+  methods: {
+    getAnimationClass(index) {
+      return `animation-delay-${index + 1}`;
+    }
+  }
 };
 </script>
 <style lang="scss">
 .w-80 {
-  background-color: rgb(35, 35, 35);
 
   .about-me {
     width: 80%;
@@ -66,16 +94,48 @@ export default {
         font-weight: 300;
         font-size: clamp(1.2em, 1.8vw, 1.9rem);
         color: rgb(233, 229, 229);
-        margin-bottom: 1.2em;
+        margin-bottom: .5em;
       }
       span {
         color: $color-accent;
         font-weight: 700;
       }
 
-      // span:hover {
-      //   font-size: 110%;
-      // }
+      .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+
+          .grid-item {
+            border: 1px solid $accent-fade;
+            padding: .5em;
+          }
+
+          .animate {
+            opacity: 0;
+            transform: translateX(-80%);
+            animation: fade-in 1.5s ease-in-out forwards;
+          }
+
+
+          @keyframes fade-in {
+            0% {
+              opacity: 0;
+              transform: translateX(-50%);
+            }
+            66% {
+              opacity: .5;
+              background-color: $accent-fade;
+            }
+            100% {
+              opacity: 1;
+              background-color: $color-accent;
+    
+              transform: translateX(0);
+            }
+          }
+        }
+
 
       .tech-intro {
         font-size: clamp(1.3rem, 1.9vw, 1.5rem);
@@ -125,6 +185,13 @@ export default {
         width: 80%;
         margin: 0 auto;
         padding: 1.5em 0;
+
+        .grid {
+          display: grid;
+          column-gap: 2em;
+          grid-template-columns: 150px 150px
+        }
+
       }
     }
   }
