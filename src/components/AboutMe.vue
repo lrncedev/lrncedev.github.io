@@ -4,8 +4,8 @@
       <div class="about-me-txt" id="techstacks">
         <h2>About me</h2>
         <h3>
-          A Vue JS developer and currently an academe educator,
-          that teaches the trio of the web: <br /><span>HTML</span>,
+          A Full Stack Web Developer and an academe educator,
+          that teaches the fundamentails of the web: <br /><span>HTML</span>,
           <span>CSS</span>, and <span>JavaScript</span>.
         </h3>
         <h3>

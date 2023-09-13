@@ -10,8 +10,8 @@
         we can build the future.
       </h4>
       <a
-      :href="`${publicPath}LAURENCE_CADAG_CV.pdf`"
-      download="LAURENCE_CADAG_CV"
+      :href="`${publicPath}LAURENCE_CADAG.pdf`"
+      download="LAURENCE_CADAG"
       class="cta resumeBtn contact"
       >Download CV</a
     >
@@ -33,6 +33,7 @@ export default {
 .container {
   text-align: left;
   width: 100%;
+  line-height: 1.2;
   margin: 0 auto;
   min-height: calc(100vh - 200px);
   display: flex;
@@ -63,12 +64,12 @@ export default {
 
     h1 {
       font-size: clamp(2.5rem, 3.5vw, 4.8rem);
-      font-weight: 900;
+      font-weight: 300;
     }
 
     h2 {
-      color: $color-accent;
-      font-weight: 300;
+      color: $color-saturated;
+      font-weight: 700;
       font-size: clamp(1.5rem, 3.8vw, 3.5rem);
     }
 
